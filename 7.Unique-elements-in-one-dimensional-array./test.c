@@ -6,12 +6,12 @@ void main()
     printf("Enter size of an array : ");
     scanf("%d", &size);
     int arr[size];
-
+    printf("Enter elements of array : ");
     for (i = 0; i < size; i++)
     {
         scanf("%d", &arr[i]);
     }
-    
+
     printf("Unique Elements are : ");
     for (i = 0; i < size; i++)
     {
