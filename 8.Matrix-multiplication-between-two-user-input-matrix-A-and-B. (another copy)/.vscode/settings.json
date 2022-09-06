@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "random": "c",
-        "algorithm": "c",
-        "string.h": "c",
-        "stdio.h": "c"
-    }
-}
