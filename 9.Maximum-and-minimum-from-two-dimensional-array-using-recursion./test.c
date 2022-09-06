@@ -1,38 +1,38 @@
-int max, min;
+#include <stdio.h>
+int max, min, i, j, r = 0, c = 0;
+
 void main()
 {
-    int size;
-    printf("Enter size of array : ");
-    scanf("%d", &size);
-    int arr[size], N, i;
 
-    printf("Enter %d elements in array: ", N);
-    for (i = 0; i < size; i++)
+    printf("Enter size of array : ");
+    scanf("%d %d", &r, &c);
+
+    printf("you Entered : %d %d\n", r, c);
+    int arr[r][c];
+    printf("Enter elements in array : \n");
+    for (i = 0; i < r; i++)
     {
-        scanf("%d", &arr[i]);
+        for (j = 0; j < c; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
     }
     max = 0;
     min = 0;
+    r = 0;
+    c = 0;
+    checkMaxMin(arr);
 
-    checkMaxMin(arr, 0, size);
-    // min = minimum(arr, 0, size);
-
-    printf("Minimum element in array = %d\n", min);
-    printf("Maximum element in array = %d\n", max);
+    // printf("Minimum element in array = %d\n", min);
+    // printf("Maximum element in array = %d\n", max);
 }
-
-void checkMaxMin(int arr[], int start, int len)
+void checkMaxMin(int arr[r][c])
 {
-    if (start >= len)
+    if (r < 0 || c < 0)
+    {
         return;
-
-    if (max < arr[start])
-    {
-        max = arr[start];
     }
-    else if (min > arr[start])
-    {
-        min = arr[start];
-    }
-    checkMaxMin(arr, start + 1, len);
+    printf("---------%d", arr[r][c]);
+    r--;
+    checkMaxMin(arr);
 }

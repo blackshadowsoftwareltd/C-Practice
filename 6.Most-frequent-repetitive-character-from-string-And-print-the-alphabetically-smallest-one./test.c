@@ -14,6 +14,11 @@ void main()
     printf("You entered : %s\n", str);
     for (int i = 0; i < strlen(str); i++)
     {
+        if (i != 0 && str[i] != str[i - 1]) ///? if i>0 and current char is not equal to previous char. then set the counter of that char to 0
+        {
+            temp = str[i];
+            counter[temp - 97] = 0;
+        }
         temp = str[i];
         counter[temp - 97] = counter[temp - 97] + 1;
     }
@@ -27,5 +32,5 @@ void main()
         }
     }
     char c = x + 97;
-    printf("%c existing %d time", c, temp);
+    printf("%c existing %d times", c, temp);
 }
